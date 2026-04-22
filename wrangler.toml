@@ -1,0 +1,18 @@
+name = "sub-store-workers"
+main = "dist/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# KV Namespace bindings
+# For production: run `wrangler kv namespace create SUB_STORE_DATA` and fill in the id
+[[kv_namespaces]]
+binding = "SUB_STORE_DATA"
+id = "edc464d550284e4caf11b03ce891ab00"
+
+# 定时同步（每天 23:55 执行）
+[triggers]
+crons = ["55 15 * * *"]
+
+[vars]
+# SUB_STORE_FRONTEND_BACKEND_PATH = "/api"
+# SUB_STORE_PUSH_SERVICE = ""

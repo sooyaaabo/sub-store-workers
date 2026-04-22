@@ -1,0 +1,5 @@
+node_modules/
+dist/
+pages-dist/_worker.js
+.wrangler/
+.dev.vars
